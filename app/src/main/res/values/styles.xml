@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <style name="MyTheme" parent="MyTheme.Base">
+        <item name="android:fontFamily">@font/pelagiad</item>
+        <item name="android:textColor">#969696</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:colorAccent">#FF9800</item>
+        <item name="android:textColorSecondary">#646464</item>
     </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+        <item name="android:textColor">#FF5722</item>
+        <item name="android:font">@font/pelagiad</item>
+    </style>
+
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FF5722</item>
+        <item name="android:font">@font/pelagiad</item>
+    </style>
+
     <style name="MyTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
-        <item name="android:colorPrimary">#2196F3</item>
-        <item name="android:colorPrimaryDark">#1976D2</item>
-        <item name="android:colorAccent">#FF4081</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
     </style>
 
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textAppearance">@style/CustomTabWidgetText</item>
+    </style>
 
+    <style name="CustomTabWidgetText"
+        parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

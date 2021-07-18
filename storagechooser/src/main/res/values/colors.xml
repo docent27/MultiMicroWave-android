@@ -23,14 +23,14 @@
         <item>@color/colorPrimary</item> <!--  Top Header bg -->
         <item>@android:color/white</item> <!-- header text   -->
         <item>@android:color/white</item> <!-- list bg  -->
-        <item>@android:color/black</item> <!--  storage list name text  -->
+        <item>@android:color/holo_orange_dark</item> <!--  storage list name text  -->
         <item>@color/colorPrimary</item> <!-- free space text  -->
         <item>@color/colorAccent</item> <!-- memory bar -->
 
         <!-- secondary dialog colors -->
         <item>@color/colorPrimary</item> <!-- address bar bg -->
         <item>@android:color/white</item> <!-- list bg -->
-        <item>@android:color/black</item> <!-- list text -->
+        <item>@android:color/holo_orange_dark</item> <!-- list text -->
         <item>@android:color/white</item> <!-- address bar tint -->
         <item>@color/chevronBgColor</item> <!-- new folder hint tint -->
         <item>#da6c6c</item> <!-- select button color -->
@@ -50,7 +50,7 @@
 
         <!-- secondary dialog colors -->
         <item>@color/colorPrimary</item> <!-- address bar bg -->
-        <item>@android:color/black</item> <!-- list bg -->
+        <item>@android:color/holo_purple</item> <!-- list bg -->
         <item>@android:color/white</item> <!-- list text -->
         <item>@android:color/white</item> <!-- address bar tint -->
         <item>@color/chevronBgColor</item> <!-- new folder hint tint -->
