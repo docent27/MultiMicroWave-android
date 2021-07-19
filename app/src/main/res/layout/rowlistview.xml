@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@android:color/black" />
+        android:textColor="#FF9800" />
 
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:layout_marginTop="5dp"
-        android:textColor="@android:color/black" />
+        android:textColor="#969696" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Player Count: "
-            android:textColor="@android:color/black"
+            android:textColor="#969696"
             android:textStyle="bold" />
 
 
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceButton"
-            android:textColor="@android:color/black"
+            android:textColor="#FF9800"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -52,7 +52,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:textColor="@android:color/black" />
+        android:textColor="#FF5722" />
 
 
 </RelativeLayout>
