@@ -8,7 +8,7 @@ export ARCH="arm"
 export CCACHE="false"
 ASAN="false"
 DEPLOY_RESOURCES="true"
-LTO="false"
+LTO="true"
 BUILD_TYPE="release"
 CFLAGS="-fPIC"
 CXXFLAGS="-fPIC -frtti -fexceptions"
@@ -177,7 +177,7 @@ rm -rf ../app/src/main/jniLibs/$ABI/
 mkdir -p ../app/src/main/jniLibs/$ABI/
 
 # libopenmw.so is a special case
-find build/$ARCH/openmw-prefix/ -iname "libopenmw.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/libopenmw.so \;
+#find build/$ARCH/openmw-prefix/ -iname "libopenmw.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/libopenmw.so \;
 find build/$ARCH/tes3mp-prefix/ -iname "libtes3mp.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/libtes3mp.so \;
 
 # copy over libs we compiled
@@ -190,7 +190,7 @@ if [[ $DEPLOY_RESOURCES = "true" ]]; then
 	echo "==> Deploying resources"
 
 	DST=$DIR/../app/src/main/assets/libopenmw/
-	SRC=build/$ARCH/openmw-prefix/src/openmw-build/
+	SRC=build/$ARCH/tes3mp-prefix/src/tes3mp-build/
 	SRCTES3MP=build/$ARCH/tes3mp-prefix/src/tes3mp-build/
 
 	rm -rf "$DST" && mkdir -p "$DST"
@@ -219,7 +219,7 @@ echo "==> Making your debugging life easier"
 rm -rf "./symbols/$ABI/" && mkdir -p "./symbols/$ABI/"
 cp "./build/$ARCH/openal-prefix/src/openal-build/libopenal.so" "./symbols/$ABI/"
 cp "./build/$ARCH/sdl2-prefix/src/sdl2-build/obj/local/$ABI/libSDL2.so" "./symbols/$ABI/"
-cp "./build/$ARCH/openmw-prefix/src/openmw-build/libopenmw.so" "./symbols/$ABI/libopenmw.so"
+#cp "./build/$ARCH/openmw-prefix/src/openmw-build/libopenmw.so" "./symbols/$ABI/libopenmw.so"
 cp "./build/$ARCH/tes3mp-prefix/src/tes3mp-build/libtes3mp.so" "./symbols/$ABI/libtes3mp.so"
 cp "./build/$ARCH/gl4es-prefix/src/gl4es-build/obj/local/$ABI/libGL.so" "./symbols/$ABI/"
 cp "../app/src/main/jniLibs/$ABI/libc++_shared.so" "./symbols/$ABI/"

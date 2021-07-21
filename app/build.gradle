@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "is.terrabyte.omw"
+        applicationId "is.terrabyte.tes3mp"
         versionCode 19
         versionName calculateVersion()
 
@@ -54,7 +54,7 @@ android {
 
         debug {
             applicationIdSuffix ".debug"
-            debuggable true
+            debuggable false
         }
     }
 
@@ -67,14 +67,14 @@ android {
 
         nightly {
             dimension "version"
-            applicationId "is.xyz.omw_nightly"
+            applicationId "is.xyz.tes3mp"
             versionNameSuffix "-nightly"
         }
     }
 
     applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "app-debug.apk"
+            outputFileName = "tes3mp.apk"
         }
     }
 }
