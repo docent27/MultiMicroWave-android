@@ -140,7 +140,16 @@
         <EditTextPreference
             android:key="commandLine"
             android:title="@string/pref_commandLine"
-            android:defaultValue="--connect 95.181.153.32:26666"
+            />
+
+        <ListPreference
+            android:key="commandLine"
+            android:title="@string/pref_server_select"
+            android:dialogTitle="@string/pref_server_select"
+            android:entries="@array/pref_server_select_entries"
+            android:entryValues="@array/pref_server_select_values"
+            android:defaultValue="@string/pref_server_select_default"
+            android:summary="%s"
             />
 
         <ListPreference
