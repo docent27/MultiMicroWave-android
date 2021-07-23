@@ -35,6 +35,7 @@
 
 
     <PreferenceCategory android:title="@string/pref_ui">
+
         <Preference
             android:title="@string/action_show_screen_controls"
             android:key="pref_controls"
@@ -46,6 +47,13 @@
             android:dialogTitle="@string/pref_uiScaling"
             android:inputType="numberDecimal"
             android:hint="1.5"
+            />
+
+        <EditTextPreference
+            android:key="pref_customResolution"
+            android:title="@string/pref_customResolution"
+            android:dialogTitle="@string/pref_customResolution"
+            android:hint="640x480"
             />
 
         <ListPreference
@@ -60,33 +68,32 @@
 
         <CheckBoxPreference
             android:key="pref_hide_controls"
+            android:defaultValue="false"
             android:title="@string/pref_hide_controls" />
 
         <CheckBoxPreference
             android:key="pref_always_show_top_bar"
+            android:defaultValue="true"
             android:title="@string/pref_always_show_top_bar" />
 
         <CheckBoxPreference
             android:key="pref_show_qp"
+            android:defaultValue="true"
             android:title="@string/pref_show_qp" />
 
         <CheckBoxPreference
             android:key="pref_show_fn"
+            android:defaultValue="true"
             android:title="@string/pref_show_fn" />
-
-        <EditTextPreference
-            android:key="pref_customResolution"
-            android:title="@string/pref_customResolution"
-            android:dialogTitle="@string/pref_customResolution"
-            android:hint="640x480"
-            />
 
         <CheckBoxPreference
             android:key="pref_screen_keeper"
+            android:defaultValue="true"
             android:title="@string/pref_screen_keeper"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/category_performance">
+
         <ListPreference
             android:key="pref_unsafe_state_graph"
             android:title="@string/pref_unsafe_state_graph"
@@ -129,6 +136,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_advanced">
+
         <EditTextPreference
             android:key="commandLine"
             android:title="@string/pref_commandLine"
