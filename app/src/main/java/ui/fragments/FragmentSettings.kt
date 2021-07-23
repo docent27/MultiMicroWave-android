@@ -40,6 +40,7 @@ import file.GameInstaller
 
 import ui.activity.ConfigureControls
 import ui.activity.ModsActivity
+import ui.activity.about_activity
 import ui.activity.BrowserActivity;
 import java.io.File
 import utils.MyApp
@@ -61,6 +62,12 @@ class FragmentSettings : PreferenceFragment(), OnSharedPreferenceChangeListener 
 
         findPreference("pref_mods").setOnPreferenceClickListener {
             val intent = Intent(activity, ModsActivity::class.java)
+            this.startActivity(intent)
+            true
+        }
+
+        findPreference("pref_about").setOnPreferenceClickListener {
+            val intent = Intent(activity, about_activity::class.java)
             this.startActivity(intent)
             true
         }

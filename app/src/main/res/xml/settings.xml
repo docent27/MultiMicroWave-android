@@ -4,11 +4,6 @@
         android:key="general_settings"
         android:title="@string/general_settings">
 
-        <CheckBoxPreference
-            android:key="multiplayer"
-            android:summary="Активировать многопользовательный режим"
-            android:title="Мультиплеер" />
-
         <ListPreference
             android:key="pref_encoding"
             android:summary="%s"
@@ -28,11 +23,14 @@
             android:title="@string/mods"
             android:key="pref_mods"
             />
-            
+
         <Preference
             android:title="Браузер серверов"
             android:key="pref_browser"
             />
+        <Preference
+            android:key="pref_about"
+            android:title="О программе" />
     </PreferenceCategory>
 
 
@@ -145,6 +143,14 @@
             android:defaultValue="@string/pref_graphicsLibrary_default"
             android:summary="%s"
         />
+
+        <CheckBoxPreference
+            android:key="multiplayer"
+            android:selectAllOnFocus="false"
+            android:selectable="false"
+            android:summary="Активировать многопользовательный режим"
+            android:defaultValue="true"
+            android:title="Мультиплеер" />
     </PreferenceCategory>
 
 </PreferenceScreen>

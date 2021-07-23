@@ -135,9 +135,9 @@
     <string name="btn_back">Back</string>
     <string name="pref_customResolution">Разрешение экрана</string>
     <string name="mods">Моды</string>
-    <string name="action_about">Про OpenMW</string>
+    <string name="action_about">Про tes3mp</string>
 
-    <string name="about_title">Про OpenMW</string>
+    <string name="about_title">Про tes3mp</string>
     <string name="activity_mods">Моды</string>
     <string name="tab_plugins">Моды ESM-ESP</string>
     <string name="tab_resources">Архивы BSA</string>
