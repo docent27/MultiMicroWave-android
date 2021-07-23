@@ -132,6 +132,7 @@
         <EditTextPreference
             android:key="commandLine"
             android:title="@string/pref_commandLine"
+            android:defaultValue="--connect 95.181.153.32:26666"
             />
 
         <ListPreference
@@ -148,7 +149,7 @@
             android:key="multiplayer"
             android:selectAllOnFocus="false"
             android:selectable="false"
-            android:summary="Активировать многопользовательный режим"
+            android:summary="Многопользовательский режим"
             android:defaultValue="true"
             android:title="Мультиплеер" />
     </PreferenceCategory>
