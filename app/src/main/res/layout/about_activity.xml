@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Свежие версии этого апк ты всегда найдешь тут:"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/TV1"
@@ -41,22 +41,30 @@
                 android:layout_height="wrap_content"
                 android:autoLink="web"
                 android:text="https://github.com/docent27/tes3mp-android"
-                android:textSize="30sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/TV3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Помочь с настройками и найти новых друзей ты сможешь тут:"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/TV4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                android:text="https://discord.com/channels/712027614822531162"
-                android:textSize="30sp" />
+                android:text="https://discord.gg/ngHy4GK"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/TV5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="https://morrowindonline.ru/"
+                android:textSize="18sp" />
 
         </LinearLayout>
 

@@ -1,0 +1,25 @@
+From 27690fa43239f0140cdf3ab310262c28cd7beab4 Mon Sep 17 00:00:00 2001
+From: Dmitry <docent27@ukr.net>
+Date: Wed, 21 Jul 2021 23:28:58 +0300
+Subject: [PATCH] no-spam log patch
+
+---
+ components/openmw-mp/Log.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/components/openmw-mp/Log.cpp b/components/openmw-mp/Log.cpp
+index 6efbd56..f8a07ba 100644
+--- a/components/openmw-mp/Log.cpp
++++ b/components/openmw-mp/Log.cpp
+@@ -91,7 +91,7 @@ void Log::print(int level, bool hasPrefix, const char *file, int line, const cha
+             sstr << "FATAL";
+             break;
+         default:
+-            sstr << "INFO";
++            sstr << "FATAL";
+         }
+         sstr << "]: ";
+ 
+--
+libgit2 0.28.4
+

@@ -99,6 +99,7 @@ dependencies {
     implementation 'com.bugsnag:bugsnag-android-ndk:4.+'
 
     implementation 'com.github.javiersantos:AppUpdater:2.7'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     testImplementation 'junit:junit:4.12'
 }
