@@ -171,13 +171,13 @@
     </string-array>
 
     <string name="pref_server_select">Выбор сервера</string>
-    <string name="pref_server_select_default">--connect 95.181.153.32:26666</string>
+    <string name="pref_server_select_default">--connect 185.143.221.233:26666</string>
     <string-array name="pref_server_select_entries">
         <item>Eternal World</item>
-        <item>Любой из браузера</item>
+        <item>Любой другой</item>
     </string-array>
     <string-array name="pref_server_select_values">
-        <item>--connect 95.181.153.32:26666</item>
+        <item>--connect 185.143.221.233:26666</item>
         <item></item>
     </string-array>
 

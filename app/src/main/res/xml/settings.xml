@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory
         android:key="general_settings"
         android:title="@string/general_settings">
@@ -24,10 +25,6 @@
             android:key="pref_mods"
             />
 
-        <Preference
-            android:title="Браузер серверов"
-            android:key="pref_browser"
-            />
         <Preference
             android:key="pref_about"
             android:title="О программе" />
@@ -90,13 +87,23 @@
             android:key="pref_screen_keeper"
             android:defaultValue="true"
             android:title="@string/pref_screen_keeper"/>
+
+        <ListPreference
+            android:key="pref_graphicsLibrary"
+            android:title="@string/pref_graphicsLibrary"
+            android:dialogTitle="@string/pref_graphicsLibrary"
+            android:entries="@array/pref_graphicsLibrary_entries"
+            android:entryValues="@array/pref_graphicsLibrary_values"
+            android:defaultValue="@string/pref_graphicsLibrary_default"
+            android:summary="%s"
+            />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/pref_advanced">
+    <PreferenceCategory android:title="Параметры сервера">
 
         <EditTextPreference
             android:key="commandLine"
-            android:title="@string/pref_commandLine"
+            android:title="IP Адрес сервера"
             />
 
         <ListPreference
@@ -109,23 +116,26 @@
             android:summary="%s"
             />
 
-        <ListPreference
-            android:key="pref_graphicsLibrary"
-            android:title="@string/pref_graphicsLibrary"
-            android:dialogTitle="@string/pref_graphicsLibrary"
-            android:entries="@array/pref_graphicsLibrary_entries"
-            android:entryValues="@array/pref_graphicsLibrary_values"
-            android:defaultValue="@string/pref_graphicsLibrary_default"
-            android:summary="%s"
-        />
+    </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="Не актуальное"
+        android:visibility="invisible"
+        tools:visibility="invisible">
         <CheckBoxPreference
+            android:defaultValue="true"
             android:key="multiplayer"
             android:selectAllOnFocus="false"
             android:selectable="false"
             android:summary="Многопользовательский режим"
-            android:defaultValue="true"
             android:title="Мультиплеер" />
+        <Preference
+            android:key="pref_browser"
+            android:selectable="false"
+            android:soundEffectsEnabled="false"
+            android:splitMotionEvents="false"
+            android:title="Браузер серверов"
+            android:visibility="invisible"
+            tools:visibility="invisible" />
     </PreferenceCategory>
-
 </PreferenceScreen>

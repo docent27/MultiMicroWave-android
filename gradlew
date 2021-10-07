@@ -5,7 +5,8 @@
 ##  Gradle start up script for UN*X
 ##
 ##############################################################################
-
+cp patch/tes3mp-client-default.cfg app/src/main/assets/libopenmw/openmw/tes3mp-client-default.cfg
+cp patch/settings-default.cfg app/src/main/assets/libopenmw/openmw/settings-default.cfg
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
 
