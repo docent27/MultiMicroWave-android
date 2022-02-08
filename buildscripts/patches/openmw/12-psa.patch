@@ -1,0 +1,33 @@
+From 750fa245e702824e75892493690a598cbc833804 Mon Sep 17 00:00:00 2001
+From: Docent27 <docent27@ukr.net>
+Date: Tue, 8 Feb 2022 20:05:50 +0200
+Subject: [PATCH] psa
+
+---
+ apps/openmw/mwstate/statemanagerimp.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/apps/openmw/mwstate/statemanagerimp.cpp b/apps/openmw/mwstate/statemanagerimp.cpp
+index ffc4962..0ce9291 100644
+--- a/apps/openmw/mwstate/statemanagerimp.cpp
++++ b/apps/openmw/mwstate/statemanagerimp.cpp
+@@ -12,7 +12,7 @@
+ #include <components/settings/settings.hpp>
+ 
+ #include <osg/Image>
+-
++#include <osg/Hint>
+ #include <osgDB/Registry>
+ 
+ #include <boost/filesystem/fstream.hpp>
+@@ -296,6 +296,7 @@ void MWState::StateManager::saveGame (const std::string& description, const Slot
+ 
+         Settings::Manager::setString ("character", "Saves",
+             slot->mPath.parent_path().filename().string());
++	osg::Hint::GL4ES_SavePSA();
+     }
+     catch (const std::exception& e)
+     {
+--
+libgit2 0.28.4
+

@@ -1,12 +1,12 @@
 #!/bin/bash
 
-NDK_VERSION="r18b"
-NDK_HASH="4f61cbe4bbf6406aa5ef2ae871def78010eed6271af72de83f8bd0b07a9fd3fd"
+NDK_VERSION="r21e"
+NDK_HASH="ad7ce5467e18d40050dc51b8e7affc3e635c85bd8c59be62de32352328ed467e"
 ANDROID_API="21"
 
 # End of configurable options
 
-NDK_FILE="ndk.zip"
+NDK_FILE="ndk-$NDK_VERSION.zip"
 
 if [[ $ARCH = "arm" ]]; then
 	ABI="armeabi-v7a"

@@ -5,8 +5,26 @@
 ##  Gradle start up script for UN*X
 ##
 ##############################################################################
+rm -rf app/src/main/assets/libopenmw/resources/mygui
+cp -R patch/mygui app/src/main/assets/libopenmw/resources/mygui
+cp patch/settings.cfg app/src/main/assets/libopenmw/openmw/settings.cfg
+cp patch/version app/src/main/assets/libopenmw/resources/version
 cp patch/tes3mp-client-default.cfg app/src/main/assets/libopenmw/openmw/tes3mp-client-default.cfg
-cp patch/settings-default.cfg app/src/main/assets/libopenmw/openmw/settings-default.cfg
+cp patch/water_fragment2.glsl app/src/main/assets/libopenmw/resources/shaders/water_fragment2.glsl
+cp patch/water_vertex2.glsl app/src/main/assets/libopenmw/resources/shaders/water_vertex2.glsl
+cp patch/Ayembedt.ttf app/src/main/assets/libopenmw/resources/mygui/Ayembedt.ttf
+cp patch/DejaVuLGCSansMono.ttf app/src/main/assets/libopenmw/resources/mygui/DejaVuLGCSansMono.ttf
+cp patch/openmw_font.xml app/src/main/assets/libopenmw/resources/mygui/openmw_font.xml
+cp patch/Pelagiad.ttf app/src/main/assets/libopenmw/resources/mygui/Pelagiad.ttf
+rm -rf app/src/main/assets/libopenmw/resources/mygui/preset_01
+cp -R patch/preset_01 app/src/main/assets/libopenmw/resources/mygui/preset_01
+rm -rf app/src/main/assets/libopenmw/resources/vfs/textures/ui
+cp -R patch/ui app/src/main/assets/libopenmw/resources/vfs/textures/ui
+rm -rf app/src/main/assets/libopenmw/resources/vfs2
+cp -R patch/vfs2 app/src/main/assets/libopenmw/resources/vfs2
+cp patch/target.dds app/src/main/assets/libopenmw/resources/vfs/textures/target.dds
+mv app/src/main/jniLibs/arm64-v8a/libtes3mp.so app/src/main/jniLibs/arm64-v8a/libopenmw.so
+mv app/src/main/jniLibs/armeabi-v7a/libtes3mp.so app/src/main/jniLibs/armeabi-v7a/libopenmw.so
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
 

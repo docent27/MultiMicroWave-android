@@ -1,0 +1,25 @@
+From 530ddd409abe3de8d393487ddf8022a5f3593920 Mon Sep 17 00:00:00 2001
+From: Docent27 <docent27@ukr.net>
+Date: Tue, 8 Feb 2022 13:03:44 +0200
+Subject: [PATCH] Fix RakNetFinder
+
+---
+ cmake/FindRakNet.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/FindRakNet.cmake b/cmake/FindRakNet.cmake
+index a1d4c8f..27a22e8 100644
+--- a/cmake/FindRakNet.cmake
++++ b/cmake/FindRakNet.cmake
+@@ -18,7 +18,7 @@ FIND_LIBRARY (RakNet_LIBRARY_RELEASE NAMES RakNetLibStatic
+     $ENV{RAKNET_ROOT}/lib
+     )
+ 	
+-FIND_LIBRARY (RakNet_LIBRARY_DEBUG NAMES RakNetLibStaticd
++FIND_LIBRARY (RakNet_LIBRARY_DEBUG NAMES RakNetLibStatic
+     PATHS
+     ENV LD_LIBRARY_PATH
+     ENV LIBRARY_PATH
+--
+libgit2 0.28.4
+

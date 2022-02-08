@@ -53,7 +53,7 @@ const val TOP_BAR_SPACING = 90
  * @param defaultOpacity: default opacity of the element
  */
 open class OscElement(
-        public val uniqueId: String,
+        val uniqueId: String,
         var visibility: OscVisibility,
         val defaultX: Int,
         val defaultY: Int,
@@ -329,16 +329,14 @@ enum class OscVisibility(val v: Int) {
     NORMAL(2),
 }
 
-class Osc(
-    multiplayer: Boolean
-) {
+class Osc {
     private var osk = Osk()
     var keyboardVisible = false //< Mode where only keyboard is visible
     var mouseVisible = false //< Mode where only mouse-switch icon is visible
     private var topVisible = true //< The controls located at the top hidden behind the hamburger toggle
     private var visibilityState = 0
     private val btnMouse = OscCustomButton("mouse", OscVisibility.NULL,
-        R.drawable.mouse, TOP_BAR_SPACING * 6, 0) { toggleMouse() }
+        R.drawable.mouse, TOP_BAR_SPACING * 8, 0) { toggleMouse() }
     private val btnTopToggle = OscCustomButton("toggle", OscVisibility.NULL,
         R.drawable.toggle, 0, 0) { toggleTopControls() }
 
@@ -355,6 +353,8 @@ class Osc(
         btnTopToggle,
         OscImageButton("inventory", OscVisibility.NULL,
             R.drawable.inventory, 940, 95, 3, true),
+        OscImageButton("crouch", OscVisibility.NORMAL,
+                R.drawable.sneak, 940 - TOP_BAR_SPACING, 0, 113),
         OscImageButton("pause", OscVisibility.ESSENTIAL,
             R.drawable.pause, 940, 0, KeyEvent.KEYCODE_ESCAPE),
         OscImageButton("magic", OscVisibility.NORMAL,
@@ -381,8 +381,8 @@ class Osc(
         val btnRowSpacing = 74
         val btnColumnSpacing = 65
 
-        // Fn buttons: F1, F2, F3, F4, F10, F11 are the only ones we care about
-        arrayOf(1, 2, 3, 4, 10, 11).forEachIndexed{ i, el ->
+        // Fn buttons: F1, F3, F4, F10, F11 are the only ones we care about
+        arrayOf(1, 3, 4, 10, 11).forEachIndexed{ i, el ->
             val code = 130 + el
             val column = (i + 1) / 4 + 2
             val row = (i + 1) % 4 + 1
@@ -406,23 +406,21 @@ class Osc(
         topButtons = arrayListOf(
             OscImageButton("changePerson", OscVisibility.NORMAL,
                 R.drawable.third_person, TOP_BAR_SPACING * 1, 0, KeyEvent.KEYCODE_TAB),
+            OscImageButton("alwaysRun", OscVisibility.NORMAL,
+                R.drawable.run, TOP_BAR_SPACING * 2, 0, KeyEvent.KEYCODE_Q),
+            OscImageButton("quickSave", OscVisibility.NORMAL,
+                R.drawable.save, TOP_BAR_SPACING * 3, 0, 135),
+            OscImageButton("quickLoad", OscVisibility.NORMAL,
+                R.drawable.load, TOP_BAR_SPACING * 4, 0, 139),
             OscImageButton("diary", OscVisibility.ESSENTIAL,
-                R.drawable.journal, TOP_BAR_SPACING * 3, 0, KeyEvent.KEYCODE_J),
+                R.drawable.journal, TOP_BAR_SPACING * 5, 0, KeyEvent.KEYCODE_J),
             OscImageButton("wait", OscVisibility.NORMAL,
-                R.drawable.wait, TOP_BAR_SPACING * 4, 0, KeyEvent.KEYCODE_T),
+                R.drawable.wait, TOP_BAR_SPACING * 6, 0, KeyEvent.KEYCODE_T),
             OscCustomButton("keyboard", OscVisibility.NULL,
-                R.drawable.keyboard, TOP_BAR_SPACING * 5, 0) { toggleKeyboard() },
-            btnMouse,
-            OscImageButton("crouch", OscVisibility.NORMAL,
-                R.drawable.sneak, TOP_BAR_SPACING * 7, 0, 113)
+                R.drawable.keyboard, TOP_BAR_SPACING * 7, 0) { toggleKeyboard() },
+            btnMouse
         )
-        // add buttons we didn't do earlier
-        if (multiplayer) { 
-            topButtons.add(OscImageButton("chat", OscVisibility.NULL, R.drawable.chat, TOP_BAR_SPACING * 2, 0, KeyEvent.KEYCODE_Y))
-            // tes3mp doesn't allow quickload and quicksave
-        } else {
-            topButtons.add(OscImageButton("quickSave", OscVisibility.NORMAL, R.drawable.save, TOP_BAR_SPACING * 2, 0, 135))
-        }
+
         elements.addAll(fnButtons)
         elements.add(fn)
         elements.addAll(quickButtons)
@@ -435,6 +433,7 @@ class Osc(
         val showQp = prefs.getBoolean("pref_show_qp", false)
         val showFn = prefs.getBoolean("pref_show_fn", false)
         val alwaysShowTop = prefs.getBoolean("pref_always_show_top_bar", false)
+        val omwTouch = prefs!!.getString("pref_touch", "")
 
         for (element in elements) {
             if (!showQp && (element == qp || quickButtons.contains(element)))

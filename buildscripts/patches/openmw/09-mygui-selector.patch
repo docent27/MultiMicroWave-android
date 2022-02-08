@@ -1,0 +1,29 @@
+From 7535412d7e2b18b98d8c7bec83816c146cb17453 Mon Sep 17 00:00:00 2001
+From: Docent27 <docent27@ukr.net>
+Date: Tue, 8 Feb 2022 19:57:51 +0200
+Subject: [PATCH] my-gui-selector
+
+---
+ apps/openmw/engine.cpp | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/apps/openmw/engine.cpp b/apps/openmw/engine.cpp
+index ffae131..debfc4b 100644
+--- a/apps/openmw/engine.cpp
++++ b/apps/openmw/engine.cpp
+@@ -827,7 +827,11 @@ void OMW::Engine::prepareEngine (Settings::Manager & settings)
+     else
+         gameControllerdb = ""; //if it doesn't exist, pass in an empty string
+ 
+-    std::string myguiResources = (mResDir / "mygui").string();
++    std::string myguiDir = mResDir.string() + "/mygui";
++    const char *path = getenv("OPENMW_MYGUI");
++    if(path) 
++    myguiDir = myguiDir + "/" + path;
++    std::string myguiResources = (myguiDir);
+     osg::ref_ptr<osg::Group> guiRoot = new osg::Group;
+     guiRoot->setName("GUI Root");
+     guiRoot->setNodeMask(MWRender::Mask_GUI);
+--
+libgit2 0.28.4
+

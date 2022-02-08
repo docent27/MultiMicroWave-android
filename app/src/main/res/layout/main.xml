@@ -13,6 +13,7 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:subtitleTextColor="#281E14"
         app:titleTextColor="#FF9800" />
 
     <LinearLayout

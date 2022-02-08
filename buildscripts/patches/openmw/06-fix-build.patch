@@ -1,0 +1,27 @@
+From 90baf35060ef4b7473ff14aad61decd8b80dad7f Mon Sep 17 00:00:00 2001
+From: Docent27 <docent27@ukr.net>
+Date: Mon, 7 Feb 2022 16:02:05 +0200
+Subject: [PATCH] 06
+
+---
+ apps/openmw/CMakeLists.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/apps/openmw/CMakeLists.txt b/apps/openmw/CMakeLists.txt
+index f818853..4a1e8da 100644
+--- a/apps/openmw/CMakeLists.txt
++++ b/apps/openmw/CMakeLists.txt
+@@ -224,7 +224,9 @@ if(OSG_STATIC)
+ endif(OSG_STATIC)
+ 
+ if (ANDROID)
+-    target_link_libraries(tes3mp EGL android log z)
++    find_package(OSGPlugins REQUIRED COMPONENTS ${USED_OSG_PLUGINS})
++    list(APPEND OPENSCENEGRAPH_LIBRARIES ${OSGPlugins_LIBRARIES})
++    target_link_libraries(tes3mp EGL android log z ${OPENSCENEGRAPH_LIBRARIES} freetype jpeg png)
+ endif (ANDROID)
+ 
+ if (USE_SYSTEM_TINYXML)
+--
+libgit2 0.28.4
+

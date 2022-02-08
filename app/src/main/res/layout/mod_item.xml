@@ -5,12 +5,13 @@
     android:layout_height="wrap_content"
     android:background="#282828"
     android:backgroundTint="#00FFFFFF"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:visibility="visible">
 
     <ImageView
         android:id="@+id/handle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         android:padding="10dp"
         android:src="@drawable/ic_drag_handle_black_24dp"
@@ -24,6 +25,7 @@
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
         android:text="Mod Name"
+        android:textAlignment="viewStart"
         android:textColor="#969696"
         android:textSize="18sp" />
 

@@ -1,0 +1,27 @@
+From 26b01f74b8ffa0d04602c182c7a54d7fa52b9445 Mon Sep 17 00:00:00 2001
+From: Docent27 <docent27@ukr.net>
+Date: Tue, 8 Feb 2022 20:00:19 +0200
+Subject: [PATCH] water-selector
+
+---
+ apps/openmw/mwrender/water.cpp | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/apps/openmw/mwrender/water.cpp b/apps/openmw/mwrender/water.cpp
+index c5fd1a3..9b9c909 100644
+--- a/apps/openmw/mwrender/water.cpp
++++ b/apps/openmw/mwrender/water.cpp
+@@ -627,8 +627,8 @@ void Water::createShaderWaterStateSet(osg::Node* node, Reflection* reflection, R
+     defineMap.insert(std::make_pair(std::string("refraction_enabled"), std::string(refraction ? "1" : "0")));
+ 
+     Shader::ShaderManager& shaderMgr = mResourceSystem->getSceneManager()->getShaderManager();
+-    osg::ref_ptr<osg::Shader> vertexShader (shaderMgr.getShader("water_vertex.glsl", defineMap, osg::Shader::VERTEX));
+-    osg::ref_ptr<osg::Shader> fragmentShader (shaderMgr.getShader("water_fragment.glsl", defineMap, osg::Shader::FRAGMENT));
++    osg::ref_ptr<osg::Shader> vertexShader (shaderMgr.getShader(getenv("OPENMW_WATER_VERTEX"), defineMap, osg::Shader::VERTEX));
++    osg::ref_ptr<osg::Shader> fragmentShader (shaderMgr.getShader(getenv("OPENMW_WATER_FRAGMENT"), defineMap, osg::Shader::FRAGMENT));
+ 
+     osg::ref_ptr<osg::Texture2D> normalMap (new osg::Texture2D(readPngImage(mResourcePath + "/shaders/water_nm.png")));
+ 
+--
+libgit2 0.28.4
+

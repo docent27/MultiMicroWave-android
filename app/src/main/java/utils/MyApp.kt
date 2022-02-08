@@ -1,13 +1,17 @@
 package utils
 
 import android.app.Application
+import android.content.pm.PackageManager
 import android.os.Environment
 import android.preference.PreferenceManager
-import constants.Constants
-import java.io.File
+import android.util.Base64
+import android.util.Log
 import com.bugsnag.android.Bugsnag
 import com.bugsnag.android.Configuration
 import com.libopenmw.openmw.BuildConfig
+import constants.Constants
+import java.io.File
+import java.security.MessageDigest
 
 class MyApp : Application() {
 
@@ -24,17 +28,17 @@ class MyApp : Application() {
         Constants.USER_FILE_STORAGE = Environment.getExternalStorageDirectory().toString() + "/$slug/"
         Constants.USER_CONFIG = "${Constants.USER_FILE_STORAGE}/config"
         Constants.USER_OPENMW_CFG =  "${Constants.USER_CONFIG}/openmw.cfg"
-        Constants.SETTINGS_DEFAULT_CFG = File(filesDir, "config/settings-default.cfg").absolutePath
+        Constants.DEFAULTS_BIN = File(filesDir, "config/defaults.bin").absolutePath
         Constants.OPENMW_CFG = File(filesDir, "config/openmw.cfg").absolutePath
         Constants.OPENMW_BASE_CFG = File(filesDir, "config/openmw.base.cfg").absolutePath
         Constants.OPENMW_FALLBACK_CFG = File(filesDir, "config/openmw.fallback.cfg").absolutePath
         Constants.RESOURCES = File(filesDir, "resources").absolutePath
-        Constants.TES3MP_RESOURCES = File(filesDir, "tes3mp-resources").absolutePath
         Constants.GLOBAL_CONFIG = File(filesDir, "config").absolutePath
         Constants.VERSION_STAMP = File(filesDir, "stamp").absolutePath
 
         // Enable bugsnag only when API key is provided and we have user consent
-        if (BugsnagApiKey.API_KEY.isNotEmpty()) {
+        // Also don't enable bugsnag in debug builds
+        if (isProductionBuild() && BugsnagApiKey.API_KEY.isNotEmpty() && !BuildConfig.DEBUG) {
             haveBugsnagApiKey = true
 
             val prefs = PreferenceManager.getDefaultSharedPreferences(this)
@@ -45,6 +49,14 @@ class MyApp : Application() {
                 reportCrashes = true
             }
         }
+    }
+
+    private fun isProductionBuild(): Boolean {
+        val sig = applicationContext.packageManager.getPackageInfo(applicationContext.packageName, PackageManager.GET_SIGNATURES).signatures[0]
+        val digest: MessageDigest = MessageDigest.getInstance("SHA-256")
+        val hashBytes: ByteArray = digest.digest(sig.toByteArray())
+        val hash: String = Base64.encodeToString(hashBytes, Base64.NO_WRAP)
+        return hash == "cOqSYH3ucLraOQ7wyg/v8UKTGHlxP8N8JTN6UXO7rV0="
     }
 
     companion object {

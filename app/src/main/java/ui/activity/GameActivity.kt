@@ -38,8 +38,6 @@ import cursor.MouseCursor
 import parser.CommandlineParser
 import ui.controls.Osc
 
-import ui.activity.BrowserActivity;
-
 import utils.Utils.hideAndroidControls
 
 /**
@@ -70,8 +68,8 @@ class GameActivity : SDLActivity() {
 
     override fun loadLibraries() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        val graphicsLibrary = prefs!!.getString("pref_graphicsLibrary", "")
-        val physicsFPS = prefs!!.getString("pref_physicsFPS", "")
+        val graphicsLibrary = prefs!!.getString("pref_graphicsLibrary_v2", "")
+        val physicsFPS = prefs!!.getString("pref_physicsFPS2", "")
         if (!physicsFPS!!.isEmpty()) {
             try {
                 Os.setenv("OPENMW_PHYSICS_FPS", physicsFPS, true)
@@ -86,7 +84,7 @@ class GameActivity : SDLActivity() {
         System.loadLibrary("c++_shared")
         System.loadLibrary("openal")
         System.loadLibrary("SDL2")
-        if (graphicsLibrary == "gles2") {
+        if (graphicsLibrary != "gles1") {
             try {
                 Os.setenv("OPENMW_GLES_VERSION", "2", true)
                 Os.setenv("LIBGL_ES", "2", true)
@@ -100,12 +98,49 @@ class GameActivity : SDLActivity() {
             }
 
         }
+
+        val omwDebugLevel = prefs!!.getString("pref_debug_level", "")
+        if (omwDebugLevel == "DEBUG") Os.setenv("OPENMW_DEBUG_LEVEL", "DEBUG", true)
+        if (omwDebugLevel == "VERBOSE") Os.setenv("OPENMW_DEBUG_LEVEL", "VERBOSE", true)
+        if (omwDebugLevel == "INFO") Os.setenv("OPENMW_DEBUG_LEVEL", "INFO", true)
+        if (omwDebugLevel == "WARNING") Os.setenv("OPENMW_DEBUG_LEVEL", "WARNING", true)
+        if (omwDebugLevel == "ERROR") Os.setenv("OPENMW_DEBUG_LEVEL", "ERROR", true)
+
+        val omwMyGui = prefs!!.getString("pref_mygui", "")
+        if (omwMyGui == "preset_01") Os.setenv("OPENMW_MYGUI", "preset_01", true)
+
+        val omwWaterPreset = prefs!!.getString("pref_water_preset", "")
+        if (omwWaterPreset == "1") {
+                Os.setenv("OPENMW_WATER_VERTEX", "water_vertex.glsl", true)
+                Os.setenv("OPENMW_WATER_FRAGMENT", "water_fragment.glsl", true)
+            } else {
+                Os.setenv("OPENMW_WATER_VERTEX", "water_vertex2.glsl", true)
+                Os.setenv("OPENMW_WATER_FRAGMENT", "water_fragment2.glsl", true)
+            }
+
+        val omwVfsSl = prefs!!.getString("pref_vfs_selector", "")
+        if (omwVfsSl == "1") Os.setenv("OPENMW_VFS_SELECTOR", "vfs", true)
+        if (omwVfsSl == "2") Os.setenv("OPENMW_VFS_SELECTOR", "vfs2", true)
+
+        val envline: String = PreferenceManager.getDefaultSharedPreferences(this).getString("envLine", "").toString()
+        if (envline.length > 0) {
+            val envs: List<String> = envline.split(" ")
+            var i = 0
+
+            repeat(envs.count())
+            {
+                val env: List<String> = envs[i].split("=")
+                if (env.count() == 2) Os.setenv(env[0], env[1], true)
+                i = i + 1
+            }
+        }
+
         System.loadLibrary("GL")
-        System.loadLibrary(if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("multiplayer", false)) "tes3mp" else "openmw")
+        System.loadLibrary("openmw")
     }
 
     override fun getMainSharedObject(): String {
-        if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("multiplayer", false)) return "libtes3mp.so" else return "libopenmw.so"
+        return "libopenmw.so"
     }
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,7 +160,7 @@ class GameActivity : SDLActivity() {
         var osc: Osc? = null
         if (!pref_hide_controls) {
             val layout = layout
-            osc = Osc(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean("multiplayer", false))
+            osc = Osc()
             osc.placeElements(layout)
         }
         MouseCursor(this, osc)
@@ -152,15 +187,9 @@ class GameActivity : SDLActivity() {
     }
 
     override fun getArguments(): Array<String> {
-        val browserarg = BrowserActivity.getArgv();
-        if(browserarg == "") {
-            val cmd = PreferenceManager.getDefaultSharedPreferences(this).getString("commandLine", "")
-            val commandlineParser = CommandlineParser(cmd!!)
-            return commandlineParser.argv
-        } else {
-            val commandlineParser = CommandlineParser(browserarg!!);
-            return commandlineParser.argv;
-        }
+        val cmd = PreferenceManager.getDefaultSharedPreferences(this).getString("commandLine", "")
+        val commandlineParser = CommandlineParser(cmd!!)
+        return commandlineParser.argv
     }
 
     private external fun getPathToJni(path_global: String, path_user: String)

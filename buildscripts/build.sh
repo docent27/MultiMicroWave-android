@@ -4,7 +4,7 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-export ARCH="arm64"
+export ARCH="arm"
 export CCACHE="false"
 ASAN="false"
 DEPLOY_RESOURCES="true"
@@ -12,7 +12,7 @@ LTO="true"
 BUILD_TYPE="release"
 CFLAGS="-fPIC"
 CXXFLAGS="-fPIC -frtti -fexceptions"
-LDFLAGS="-Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--exclude-libs,libunwind.a -nostdlib++"
+LDFLAGS=""
 
 usage() {
 	echo "Usage: ./build.sh [--help] [--asan] [--arch arch] [--debug|--release]"
@@ -79,9 +79,9 @@ fi
 source ./include/version.sh
 
 if [ $ASAN = true ]; then
-	CFLAGS="$CFLAGS -fsanitize=address -fno-omit-frame-pointer"
-	CXXFLAGS="$CXXFLAGS -fsanitize=address -fno-omit-frame-pointer"
-	LDFLAGS="$LDFLAGS -fsanitize=address -fno-omit-frame-pointer"
+	CFLAGS="$CFLAGS -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer"
+	CXXFLAGS="$CXXFLAGS -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer"
+	LDFLAGS="$LDFLAGS -fsanitize=address -fuse-ld=gold -fno-omit-frame-pointer"
 fi
 
 if [ $BUILD_TYPE = "release" ]; then
@@ -180,10 +180,10 @@ mkdir -p ../app/src/main/jniLibs/$ABI/
 find build/$ARCH/tes3mp-prefix/ -iname "libtes3mp.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/libtes3mp.so \;
 
 # copy over libs we compiled
-cp prefix/$ARCH/lib/{libopenal,libSDL2,libGL}.so ../app/src/main/jniLibs/$ABI/
+cp prefix/$ARCH/lib/{libopenal,libSDL2,libhidapi,libGL}.so ../app/src/main/jniLibs/$ABI/
 
 # copy over libc++_shared
-find ./toolchain/$ARCH/ -iname "libc++_shared.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/ \;
+find ./toolchain/$ARCH/sysroot/usr/lib/$NDK_TRIPLET -iname "libc++_shared.so" -exec cp "{}" ../app/src/main/jniLibs/$ABI/ \;
 
 if [[ $DEPLOY_RESOURCES = "true" ]]; then
 	echo "==> Deploying resources"
@@ -201,22 +201,25 @@ if [[ $DEPLOY_RESOURCES = "true" ]]; then
 
 	# global config
 	mkdir -p "$DST/openmw/"
+	cp "$SRC/defaults.bin" "$DST/openmw/"
 	cp "$SRC/gamecontrollerdb.txt" "$DST/openmw/"
 	cp "$SRCTES3MP/tes3mp-client-default.cfg" "$DST/openmw/"
-	cp "$DIR/../app/version" "$DST/tes3mp-resources/version"
-	cp "$DIR/../app/settings-default.cfg" "$DST/openmw/"
+	# cp "$DIR/../app/version" "$DST/tes3mp-resources/version"
+	# cp "$DIR/../app/settings-default.cfg" "$DST/openmw/"
 	cat "$SRC/openmw.cfg" | grep -v "data=" | grep -v "data-local=" >> "$DST/openmw/openmw.base.cfg"
 	cat "$DIR/../app/openmw.base.cfg" >> "$DST/openmw/openmw.base.cfg"
 
 	# licensing info
 	cp "$DIR/../3rdparty-licenses.txt" "$DST"
 fi
+
 echo "==> Making your debugging life easier"
 
 # copy unstripped libs to aid debugging
 rm -rf "./symbols/$ABI/" && mkdir -p "./symbols/$ABI/"
 cp "./build/$ARCH/openal-prefix/src/openal-build/libopenal.so" "./symbols/$ABI/"
 cp "./build/$ARCH/sdl2-prefix/src/sdl2-build/obj/local/$ABI/libSDL2.so" "./symbols/$ABI/"
+cp "./build/$ARCH/sdl2-prefix/src/sdl2-build/obj/local/$ABI/libhidapi.so" "./symbols/$ABI/"
 cp "./build/$ARCH/tes3mp-prefix/src/tes3mp-build/libtes3mp.so" "./symbols/$ABI/libtes3mp.so"
 cp "./build/$ARCH/gl4es-prefix/src/gl4es-build/obj/local/$ABI/libGL.so" "./symbols/$ABI/"
 cp "../app/src/main/jniLibs/$ABI/libc++_shared.so" "./symbols/$ABI/"

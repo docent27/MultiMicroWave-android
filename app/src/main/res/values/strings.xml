@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OMW</string>
+    <string name="app_name">OpenMW</string>
 
     <string-array name="pref_encoding_entries">
-        <item>Европейский</item>
-        <item>Русский</item>
-        <item>Английский</item>
+        <item>European</item>
+        <item>Russian</item>
+        <item>English</item>
     </string-array>
 
     <string-array name="pref_encoding_values">
@@ -32,37 +32,111 @@
         <item>halfResolution</item>
     </string-array>
 
-    <string name="general_settings">Основные настройки</string>
+    <string name="general_settings">Main settings</string>
     <string name="start_game_label">Start game</string>
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
-    <string name="game_files">Игровые файлы</string>
-
-    <!-- Graphics library -->
-    <string name="pref_graphicsLibrary">Графическая библиотека</string>
+    <string name="game_files">Game files</string>
+    <string name="cat_game">Game mechanics</string>
+    <string name="pref_shaders">Shaders</string>
+    <string name="pref_pix_light">Force per pixel lighting</string>
+    <string name="pref_radfog">Radial fog</string>
+    <string name="pref_gyroscope">Gyroscope</string>
+    <string name="pref_stretch_menu_background">Stretch the background to full screen</string>
+    <string name="pref_color_topic_enable">Color topic enable</string>
+    <string name="pref_show_projectile_damage">Show projectile damage</string>
+    <string name="pref_show_melee_info">Show melee info</string>
+    <string name="pref_show_enchant_chance">Show enchant chance</string>
+    <string name="pref_best_attack">Best attack</string>
+    <string name="pref_classic_reflected_absorb_spells_behavior">Classic reflected absorb spells behavior</string>
+    <string name="pref_show_effect_duration">Show effect duration</string>
+    <string name="pref_prevent_merchant_equipping">Prevent merchant equipping</string>
+    <string name="pref_enchanted_weapons_are_magical">Enchanted weapons are magical</string>
+    <string name="pref_followers_attack_on_sight">Followers attack on sight</string>
+    <string name="pref_can_loot_during_death_animation">Can loot during death animation</string>
+    <string name="pref_rebalance_soul_gem_values">Rebalance soul gem values</string>
+    <string name="pref_use_additional_anim_sources">Use additional anim sources</string>
+    <string name="pref_barter_disposition_change_is_permanent">Barter disposition change is permanent</string>
+    <string name="pref_weapon_sheathing">Weapon sheathing</string>
+    <string name="pref_shield_sheathing">Shield sheathing</string>
+    <string name="pref_only_appropriate_ammunition_bypasses_resistance">Only appropriate ammunition bypasses resistance</string>
+    <string name="pref_use_magic_item_animations">Use magic item animations</string>
+    <string name="pref_normalise_race_speed">Normalise race speed</string>
+    <string name="pref_uncapped_damage_fatigue">Uncapped damage fatigue</string>
+    <string name="pref_turn_to_movement_direction">Turn to movement direction</string>
+    <string name="pref_smooth_movement">Smooth movement</string>
+    <string name="pref_NPCs_avoid_collisions">NPCs avoid collisions</string>
+    <string name="pref_NPCs_give_way">NPCs give way</string>
+    <string name="pref_swim_upward_correction">Swim upward correction</string>
+    <string name="pref_trainers_training_skills_based_on_base_skill">Trainers training skills based on base skill</string>
+    <string name="pref_always_allow_stealing_from_knocked_out_actors">Always allow stealing from knocked out actors</string>
+    <string name="pref_graphic_herbalism">Graphic herbalism</string>
+    <string name="pref_allow_actors_to_follow_over_water_surface">Allow actors to follow over water surface</string>
+    <string name="pref_shader_water">Enable water shader</string>
+    <string name="pref_refraction">Refraction</string>
+    <string name="pref_head_bobbing">Head bobbing</string>
+    <string name="pref_view_over_shoulder">View over shoulder</string>
+    <string name="pref_auto_switch_shoulder">Auto switch shoulder</string>
+    <string name="pref_preview_if_stand_still">Preview if stand still</string>
+    <string name="pref_deferred_preview_rotation">Deferred preview rotation</string>
+    <string name="pref_subtitles">Subtitles</string>
+    <string name="pref_toggle_sneak">Toggle sneak</string>
+    <string name="pref_small_feature_culling">Small feature culling</string>
+    <string name="pref_auto_use_pbr">Auto use normal/specular maps</string>
+    <string name="pref_apply_lighting_to_environment_maps">Apply lighting to environment maps</string>
+    <string name="pref_autosave">Autosave</string>
+    <string name="pref_timeplayed">Timeplayed</string>
+    <string name="pref_save_options">Save game settings</string>
+    <string name="pref_clamp_lighting">Clamp lighting</string>
+    <string name="pref_groundcover">Groundcover settings</string>
+    <string name="pref_groundcover_enable">Groundcover enable</string>
+    <string name="pref_graphicsLibrary">Graphics library</string>
     <string name="pref_graphicsLibrary_default">gles2</string>
-    <string name="pref_advanced">Дополнительно</string>
-    <string name="pref_commandLine">Коммандная строка</string>
-    <string name="pref_ui">Пользовательский интерфейс</string>
-    <string name="pref_uiScaling">Масштаб интерфейса</string>
+    <string name="pref_advanced">Debug settings</string>
+    <string name="pref_videopref">Graphics settings</string>
+    <string name="pref_commandLine">Command line</string>
+    <string name="pref_envLine">Environment variables</string>
+    <string name="pref_ui">Interface</string>
+    <string name="pref_gamma">Gamma</string>
+    <string name="pref_uiScaling">UI Scaling</string>
     <string name="uiScaling_auto">Auto (%1$.2f)</string>
-    <string name="pref_screen_keeper">Экран всегда включен</string>
+    <string name="pref_screen_keeper">The screen is always on</string>
     <string name="pref_touchpadSensitivity">Virtual touchpad sensitivity</string>
-    <string name="pref_viewingDistance">Viewing distance</string>
-    <string name="action_reset_config">Сборс настроек</string>
-    <string name="action_reset_screen_controls">Сброс наэкранных кнопок</string>
-    <string name="action_show_screen_controls">Управление</string>
-    <string name="pref_hide_controls">Убрать экранное управление</string>
-    <string name="config_was_reset">Настройки успешно сброшены</string>
+    <string name="action_reset_config">Reset configs</string>
+    <string name="action_reset_screen_controls">Reset on-screen controls</string>
+    <string name="action_show_screen_controls">On-screen controls</string>
+    <string name="pref_hide_controls">Hide screen controls</string>
+    <string name="config_was_reset">Config file settings have been successfully reset to default values</string>
     <string name="pref_lang">Language settings</string>
-    <string name="pref_encoding">Язык игры</string>
+    <string name="pref_encoding">Game Language</string>
     <string name="pref_encoding_default">win1251</string>
     <string name="btn_opacityPlus">Alpha+</string>
     <string name="btn_opacityMinus">Alpha-</string>
     <string name="btn_sizePlus">Size+</string>
     <string name="btn_sizeMinus">Size-</string>
-    <string name="btn_resetControlsLayout">Сброс настроек</string>
-    <string name="pref_physicsFPS">Физический FPS</string>
+    <string name="btn_resetControlsLayout">Reset to defaults</string>
+    <string name="pref_physicsFPS2">FPS physics</string>
+    <string name="pref_global_functions">Allow writing to settings.cfg</string>
+    <string name="pref_preload_exterior_grid">Preload exterior grid</string>
+    <string name="pref_preload_fast_travel">Preload fast travel</string>
+    <string name="pref_preload_doors">Preload doors</string>
+    <string name="pref_preload_instances">Preload instances</string>
+    <string name="pref_object_paging">Object paging</string>
+    <string name="pref_always_run">Always run</string>
+    <string name="pref_load_unsupported_nif_files">Load unsupported nif files</string>
+    <string name="pref_menu_camera">Camera</string>
+    <string name="pref_menu_cells">Cells</string>
+    <string name="pref_menu_terrain">Terrain</string>
+    <string name="pref_menu_gui">Gui</string>
+    <string name="pref_menu_shaders">Shaders</string>
+    <string name="pref_menu_input">Input</string>
+    <string name="pref_menu_water">Water</string>
+    <string name="pref_menu_navigator">Navigator</string>
+    <string name="pref_menu_physics">Physics</string>
+    <string name="pref_menu_models">Models</string>
+    <string name="pref_occlusion_culling">Occlusion culling</string>
+    <string name="pref_reflection_occlusion_culling">Reflection occlusion culling</string>
+
 
     <string-array name="pref_graphicsLibrary_entries">
         <item>GLESv1</item>
@@ -74,41 +148,32 @@
         <item>gles2</item>
     </string-array>
 
-    <string-array name="pref_physicsFPS_entries">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
+    <string-array name="pref_physicsFPS2_entries">
+        <item>60 fps</item>
+        <item>30 fps</item>
     </string-array>
 
-    <string name="pref_unsafe_state_graph">Включить графические оптимизации</string>
+    <string-array name="pref_physicsFPS2_values">
+        <item>60</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="pref_unsafe_state_graph">Enable unsafe graphics optimizations</string>
     <string-array name="pref_unsafe_state_graph_entries">
         <item>Yes</item>
         <item>No</item>
     </string-array>
+
     <string-array name="pref_unsafe_state_graph_values">
         <item>true</item>
         <item>false</item>
     </string-array>
+
     <string name="pref_unsafe_state_graph_default">false</string>
 
-    <string name="pref_physicsFPS_default">15</string>
+    <string name="pref_physicsFPS2_default">30</string>
 
-    <string name="pref_allowCapsuleShape">Упрощённая коллизия нереварина</string>
-
-    <!-- Oops. This has inverted true/false between entries and values -->
-    <string-array name="pref_allowCapsuleShape_entries">
-        <item>Yes</item>
-        <item>No</item>
-    </string-array>
-
-    <string-array name="pref_allowCapsuleShape_values">
-        <item>false</item>
-        <item>true</item>
-    </string-array>
-
-    <string name="pref_allowCapsuleShape_default">false</string>
-
-    <string name="pref_preload">Предзагрузка</string>
+    <string name="pref_preload">Preloading</string>
     <string-array name="pref_preload_entries">
         <item>Enabled</item>
         <item>Disabled</item>
@@ -118,86 +183,531 @@
         <item>false</item>
     </string-array>
     <string name="pref_preload_default">false</string>
-
-    <string name="pref_distantTerrain">Distant Terrain</string>
-    <string-array name="pref_distantTerrain_entries">
-        <item>Enabled</item>
-        <item>Disabled</item>
-    </string-array>
-    <string-array name="pref_distantTerrain_values">
-        <item>true</item>
-        <item>false</item>
-    </string-array>
-    <string name="pref_distantTerrain_default">false</string>
-
-    <string name="pref_viewingDistance_default">2000.0</string>
-
     <string name="btn_back">Back</string>
-    <string name="pref_customResolution">Разрешение экрана</string>
-    <string name="mods">Моды</string>
-    <string name="action_about">Про tes3mp</string>
+    <string name="pref_customResolution">Screen resolution</string>
+    <string name="mods">Mods</string>
+    <string name="action_about">About</string>
 
-    <string name="about_title">Про tes3mp</string>
-    <string name="activity_mods">Моды</string>
-    <string name="tab_plugins">Моды ESM-ESP</string>
-    <string name="tab_resources">Архивы BSA</string>
-    <string name="data_error_title">В этой папке нет файлов игры</string>
-    <string name="data_error_message">Пожалуйста, выберите каталог, содержащий как файл Morrowind.ini, так и каталог Data Files</string>
-    <string name="permissions_error_title">Нет разрешения</string>
-    <string name="permissions_error_message">Дайте приложению OpenMW доступ к файловой системе, иначе OpenMW не сможет загрузить файлы игры</string>
-    <string name="ini_error_message">Не возможно прочитать файл morrowind.ini, убедитесь, что он имеет правильный формат и не поврежден</string>
+    <string name="about_title">About OMW</string>
+    <string name="activity_mods">Mods</string>
+    <string name="tab_plugins">Mods ESM-ESP</string>
+    <string name="tab_resources">Archives BSA</string>
+    <string name="tab_groundcovers">Groundcover ESP</string>
+    <string name="data_error_title">Error locating data files</string>
+    <string name="data_error_message">Please select a directory which contains both the \"Morrowind.ini\" file and the \"Data Files\" directory</string>
+    <string name="permissions_error_title">No permissions</string>
+    <string name="permissions_error_message">OMW needs storage permissions to locate and access Morrowind game files. Please grant this permission through settings</string>
+    <string name="ini_error_message">Failure transforming the configuration file. Please ensure your \"Morrowind.ini\" is well-formed</string>
 
-    <string name="no_data_files_title">Папка Data files не найдена</string>
-    <string name="no_data_files_message">Вы должны скопировать файлы игры Morrowind на свой гаджет и выбрать путь к папке Data Files, прежде чем в игру можно будет играть.</string>
-    <string name="category_performance">Производительность</string>
+    <string name="no_data_files_title">Data files not found</string>
+    <string name="no_data_files_message">You must copy Morrowind game files to your device and select the path under \"Game files\" before the game can be played</string>
+    <string name="category_performance">Performance</string>
 
-    <string name="no_content_files_title">Нет файлов</string>
-    <string name="no_content_files_message">Не выбран ни один Мод. Выберите хотя бы morrowind.esm чтобы играть.</string>
-    <string name="no_content_files_dismiss">Все равно продолжить</string>
+    <string name="no_content_files_title">No content files!</string>
+    <string name="no_content_files_message">There are no content files enabled. Before the game can run, you must activate at least one plugin file from the \"Mods…\" menu</string>
+    <string name="no_content_files_dismiss">Proceed anyway</string>
 
     <string name="configure_mods">Configure mods</string>
 
-    <string name="pref_mouse_mode">Режим управления в игре</string>
-    <string name="pref_mouse_mode_default">hybrid</string>
+    <string name="pref_mouse_mode">Controls mode</string>
     <string-array name="pref_mouse_mode_entries">
-        <item>Гибридный</item>
-        <item>Режим джойстика</item>
-        <item>Полностью сенсорный</item>
+        <item>Hybrid</item>
+        <item>Joystick</item>
+        <item>Touch</item>
     </string-array>
     <string-array name="pref_mouse_mode_values">
         <item>hybrid</item>
         <item>joystick</item>
         <item>touch</item>
     </string-array>
-
-    <string name="pref_server_select">Выбор сервера</string>
-    <string name="pref_server_select_default">--connect 45.90.32.251:26666</string>
-    <string-array name="pref_server_select_entries">
-        <item>Eternal World</item>
-        <item>Любой другой</item>
-    </string-array>
-    <string-array name="pref_server_select_values">
-        <item>--connect 45.90.32.251:26666</item>
-        <item></item>
-    </string-array>
+    <string name="pref_mouse_mode_default">hybrid</string>
 
     <string name="bugsnag_yes">Yes</string>
     <string name="bugsnag_no">No</string>
     <string name="bugsnag_policy">Privacy policy</string>
 
     <string name="bugsnag_consent_title">Report crashes automatically?</string>
-    <string name="bugsnag_consent_message">Would you like to enable automatic crash reporting?\nIf a crash occurs, some data about your device, configuration and installed mods will be automatically submitted to Bugsnag. You can find more information in the Privacy Policy.\nThis setting can be changed at any time from the menu.</string>
+    <string name="bugsnag_consent_message">Would you like to enable automatic crash reporting?\nIf a crash occurs, some data about your device, configuration and installed mods will be automatically submitted to Bugsnag. You can find more information in the Privacy Policy.\nThis setting can be changed at any time from the menu</string>
 
     <string name="bugsnag_consent_restart_title">Please restart the application</string>
-    <string name="bugsnag_consent_restart_message">You must restart the application for these settings to come into effect.</string>
+    <string name="bugsnag_consent_restart_message">You must restart the application for these settings to come into effect</string>
     <string name="action_bugsnag_consent">Crash reporting</string>
 
-    <string name="dialog_howto">How-To</string>
+    <string name="dialog_howto">How To</string>
 
     <string name="no_browser_title">Unable to open a URL</string>
     <string name="no_browser_message">You don\'t appear to have a web browser installed. Tried to open the following URL:\n\n%1$s</string>
-    <string name="pref_show_qp">Включить Quick</string>
-    <string name="pref_show_fn">Включить FN</string>
-    <string name="pref_always_show_top_bar">Всегда отображать все иконки</string>
+    <string name="pref_show_qp">Enable Quick buttons</string>
+    <string name="pref_show_fn">Enable FN buttons</string>
+    <string name="pref_always_show_top_bar">Always show top bar</string>
 
+    <string name="pref_viewing_distance">Viewing distance</string>
+    <string name="pref_viewing_distance_default">8192</string>
+    <string-array name="pref_viewing_distance_entries">
+	<item>Ultra</item>
+	<item>High</item>
+	<item>Medium</item>
+	<item>Normal</item>
+	<item>Low</item>
+    </string-array>
+    <string-array name="pref_viewing_distance_values">
+        <item>81920</item>
+        <item>32768</item>
+        <item>16384</item>
+        <item>8192</item>
+        <item>2048</item>
+    </string-array>
+    <string name="pref_framerate_limit">Framerate limit</string>
+    <string name="pref_framerate_limit_default">30</string>
+    <string-array name="pref_framerate_limit_entries">
+	<item>No limits</item>
+	<item>60 fps</item>
+	<item>30 fps</item>
+    </string-array>
+    <string-array name="pref_framerate_limit_values">
+        <item>0</item>
+        <item>60</item>
+        <item>30</item>
+    </string-array>
+	<string name="pref_vsync">VSync</string>
+	<string name="pref_preloading">Preloading</string>
+	<string name="pref_distant">Distant terrain</string>
+    <string name="pref_antialiasing">Antialiasing</string>
+    <string name="pref_antialiasing_default">0</string>
+    <string-array name="pref_antialiasing_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_antialiasing_values">
+        <item>4</item>
+        <item>2</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_async">Async num threads</string>
+    <string name="pref_async_default">1</string>
+    <string-array name="pref_async_entries">
+	<item>Two threads</item>
+	<item>One thread</item>
+    </string-array>
+    <string-array name="pref_async_values">
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_show_owned">Show owned</string>
+    <string name="pref_show_owned_default">0</string>
+    <string-array name="pref_show_owned_entries">
+	<item>Both</item>
+	<item>Crosshair only</item>
+	<item>Tool tip only</item>
+	<item>No color</item>
+    </string-array>
+    <string-array name="pref_show_owned_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_strength_influences_hand_to_hand">Strength influences hand to hand</string>
+    <string name="pref_strength_influences_hand_to_hand_default">0</string>
+    <string-array name="pref_strength_influences_hand_to_hand_entries">
+	<item>Werewolves are ignored</item>
+	<item>Factors into werewolves damage calculation</item>
+	<item>Does not factor it in</item>
+    </string-array>
+    <string-array name="pref_strength_influences_hand_to_hand_values">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_projectiles_enchant_multiplier">Projectiles enchant multiplier</string>
+    <string name="pref_projectiles_enchant_multiplier_default">0</string>
+    <string-array name="pref_projectiles_enchant_multiplier_entries">
+	<item>1 - Maximum</item>
+	<item>0.75</item>
+	<item>0.5</item>
+	<item>0.25 - How in MCP</item>
+	<item>0 - Can only enchant one projectile</item>
+    </string-array>
+    <string-array name="pref_projectiles_enchant_multiplier_values">
+        <item>1</item>
+        <item>0.75</item>
+        <item>0.5</item>
+        <item>0.25</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_rtt_size">Reflection and refraction texture quality</string>
+    <string name="pref_rtt_size_default">512</string>
+    <string-array name="pref_rtt_size_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_rtt_size_values">
+        <item>2048</item>
+        <item>1024</item>
+        <item>512</item>
+    </string-array>
+    <string name="pref_reflection_detail">Draw objects on water reflections</string>
+    <string name="pref_reflection_detail_default">0</string>
+    <string-array name="pref_reflection_detail_entries">
+	<item>Groundcover</item>
+	<item>Actors</item>
+	<item>Objects</item>
+	<item>World</item>
+	<item>Terrain</item>
+	<item>Off</item>
+    </string-array>
+    <string-array name="pref_reflection_detail_values">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_lod_factor">Terrain lod factor</string>
+    <string name="pref_lod_factor_default">0.5</string>
+    <string-array name="pref_lod_factor_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_lod_factor_values">
+        <item>1.0</item>
+        <item>0.75</item>
+        <item>0.5</item>
+    </string-array>
+    <string name="pref_difficulty">Game difficulty</string>
+    <string name="pref_difficulty_default">0</string>
+    <string-array name="pref_difficulty_entries">
+	<item>Very hard</item>
+	<item>Hard</item>
+	<item>Normal</item>
+	<item>Easy</item>
+	<item>Very easy</item>
+    </string-array>
+    <string-array name="pref_difficulty_values">
+        <item>100</item>
+        <item>50</item>
+        <item>0</item>
+        <item>-50</item>
+        <item>-100</item>
+    </string-array>
+    <string name="pref_target_framerate">Preload target framerate</string>
+    <string name="pref_target_framerate_default">60</string>
+    <string-array name="pref_target_framerate_entries">
+	<item>60 fps</item>
+	<item>30 fps</item>
+    </string-array>
+    <string-array name="pref_target_framerate_values">
+        <item>60</item>
+        <item>30</item>
+    </string-array>
+    <string name="pref_small_feature_culling_pixel_size">Small feature culling</string>
+    <string name="pref_small_feature_culling_pixel_size_default">8</string>
+    <string-array name="pref_small_feature_culling_pixel_size_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_small_feature_culling_pixel_size_values">
+        <item>2</item>
+        <item>8</item>
+        <item>16</item>
+    </string-array>
+    <string name="pref_max_quicksaves">Max quicksaves</string>
+    <string name="pref_max_quicksaves_default">1</string>
+    <string-array name="pref_max_quicksaves_entries">
+	<item>10 saves</item>
+	<item>5 saves</item>
+	<item>1 saves</item>
+    </string-array>
+    <string-array name="pref_max_quicksaves_values">
+        <item>10</item>
+        <item>5</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_preload_num_threads">Preload num threads</string>
+    <string name="pref_preload_num_threads_default">1</string>
+    <string-array name="pref_preload_num_threads_entries">
+	<item>Two threads</item>
+	<item>One thread</item>
+    </string-array>
+    <string-array name="pref_preload_num_threads_values">
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_density">Groundcover density</string>
+    <string name="pref_density_default">0.5</string>
+    <string-array name="pref_density_entries">
+	<item>Full</item>
+	<item>Medium</item>
+	<item>Low</item>
+    </string-array>
+    <string-array name="pref_density_values">
+        <item>1</item>
+        <item>0.5</item>
+        <item>0.25</item>
+    </string-array>
+    <string name="pref_min_chunk_size">Min chunk size</string>
+    <string name="pref_min_chunk_size_default">0.5</string>
+    <string-array name="pref_min_chunk_size_entries">
+	<item>Full</item>
+	<item>High</item>
+	<item>Medium</item>
+	<item>Low</item>
+    </string-array>
+    <string-array name="pref_min_chunk_size_values">
+        <item>1</item>
+        <item>0.5</item>
+        <item>0.25</item>
+        <item>0.125</item>
+    </string-array>
+    <string name="pref_stomp_mode">Stomp mode</string>
+    <string name="pref_stomp_mode_default">0</string>
+    <string-array name="pref_stomp_mode_entries">
+	<item>The player height above the ground is taken into account, too</item>
+	<item>The player XY position is taken into account</item>
+	<item>Grass cannot be trampled</item>
+    </string-array>
+    <string-array name="pref_stomp_mode_values">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_stomp_intensity">Stomp intensity</string>
+    <string name="pref_stomp_intensity_default">0</string>
+    <string-array name="pref_stomp_intensity_entries">
+	<item>MGE XE levels</item>
+	<item>Reduced levels</item>
+	<item>Gentle levels</item>
+    </string-array>
+    <string-array name="pref_stomp_intensity_values">
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+    <string name="pref_object_paging_min_size">Cull objects smaller than this size divided by distance</string>
+    <string name="pref_object_paging_min_size_default">0.03</string>
+    <string-array name="pref_object_paging_min_size_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_object_paging_min_size_values">
+        <item>0.01</item>
+        <item>0.03</item>
+        <item>0.05</item>
+    </string-array>
+    <string name="pref_lighting_method">Lighting method</string>
+    <string name="pref_lighting_method_default">legacy</string>
+    <string-array name="pref_lighting_method_entries">
+	<item>Shaders</item>
+	<item>Legacy</item>
+    </string-array>
+    <string-array name="pref_lighting_method_values">
+        <item>shaders compatibility</item>
+        <item>legacy</item>
+    </string-array>
+    <string name="pref_max_lights">Number of light sources</string>
+    <string name="pref_max_lights_default">8</string>
+    <string-array name="pref_max_lights_entries">
+	<item>32</item>
+	<item>24</item>
+	<item>16</item>
+	<item>8</item>
+    </string-array>
+    <string-array name="pref_max_lights_values">
+	<item>32</item>
+	<item>24</item>
+	<item>16</item>
+	<item>8</item>
+    </string-array>
+    <string name="pref_minimum_interior_brightness">Interior brightness</string>
+    <string name="pref_minimum_interior_brightness_default">0.08</string>
+    <string-array name="pref_minimum_interior_brightness_entries">
+	<item>Very bright</item>
+	<item>Bright</item>
+	<item>Normal</item>
+	<item>Dark</item>
+	<item>Very dark</item>
+    </string-array>
+    <string-array name="pref_minimum_interior_brightness_values">
+	<item>1.0</item>
+	<item>0.5</item>
+	<item>0.2</item>
+	<item>0.08</item>
+	<item>0.0</item>
+    </string-array>
+    <string name="pref_preload_distance">Preload distance</string>
+    <string name="pref_preload_distance_default">1000</string>
+    <string-array name="pref_preload_distance_entries">
+	<item>Very high</item>
+	<item>High</item>
+	<item>Normal</item>
+    </string-array>
+    <string-array name="pref_preload_distance_values">
+	<item>5000</item>
+	<item>3000</item>
+	<item>1000</item>
+    </string-array>
+    <string name="pref_object_paging_merge_factor">Object paging merge factor</string>
+    <string name="pref_object_paging_merge_factor_default">3000</string>
+    <string-array name="pref_object_paging_merge_factor_entries">
+	<item>High</item>
+	<item>Normal</item>
+	<item>Low</item>
+    </string-array>
+    <string-array name="pref_object_paging_merge_factor_values">
+	<item>15000</item>
+	<item>3000</item>
+	<item>250</item>
+    </string-array>
+    <string name="pref_debug_level">OpenMW debug level</string>
+    <string name="pref_debug_level_default">ERROR</string>
+    <string-array name="pref_debug_level_entries">
+	<item>DEBUG</item>
+	<item>VERBOSE</item>
+	<item>INFO</item>
+	<item>WARNING</item>
+	<item>ERROR</item>
+    </string-array>
+    <string-array name="pref_debug_level_values">
+	<item>DEBUG</item>
+	<item>VERBOSE</item>
+	<item>INFO</item>
+	<item>WARNING</item>
+	<item>ERROR</item>
+    </string-array>
+    <string name="pref_mygui">MyGUI Hud preset</string>
+    <string name="pref_mygui_default">none</string>
+    <string-array name="pref_mygui_entries">
+	<item>OpenHUD</item>
+	<item>OpenMW</item>
+    </string-array>
+    <string-array name="pref_mygui_values">
+	<item>preset_01</item>
+	<item>none</item>
+    </string-array>
+    <string name="pref_water_preset">Water shader preset</string>
+    <string name="pref_water_preset_default">1</string>
+    <string-array name="pref_water_preset_entries">
+	<item>Vtastek</item>
+	<item>OpenMW</item>
+    </string-array>
+    <string-array name="pref_water_preset_values">
+	<item>2</item>
+	<item>1</item>
+    </string-array>
+    <string name="pref_vfs_selector">Game UI preset</string>
+    <string name="pref_vfs_selector_default">1</string>
+    <string-array name="pref_vfs_selector_entries">
+	<item>Dark</item>
+	<item>OpenMW</item>
+    </string-array>
+    <string-array name="pref_vfs_selector_values">
+	<item>2</item>
+	<item>1</item>
+    </string-array>
+    <string name="pref_rendering_distance">Rendering distance</string>
+    <string name="pref_rendering_distance_default">6144</string>
+    <string-array name="pref_rendering_distance_entries">
+	<item>Ultra</item>
+	<item>High</item>
+	<item>Normal</item>
+	<item>Low</item>
+	<item>Very low</item>
+    </string-array>
+    <string-array name="pref_rendering_distance_values">
+	<item>8192</item>
+	<item>6144</item>
+	<item>4096</item>
+	<item>2048</item>
+	<item>1024</item>
+    </string-array>
+    <string name="pref_vertex_lod_mod">Vertex lod mod</string>
+    <string name="pref_vertex_lod_mod_default">0</string>
+    <string-array name="pref_vertex_lod_mod_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_vertex_lod_mod_values">
+	<item>0</item>
+	<item>-1</item>
+	<item>-3</item>
+    </string-array>
+    <string name="pref_composite_map_level">Composite map level</string>
+    <string name="pref_composite_map_level_default">0</string>
+    <string-array name="pref_composite_map_level_entries">
+	<item>Quality</item>
+	<item>Balanced</item>
+	<item>Performance</item>
+    </string-array>
+    <string-array name="pref_composite_map_level_values">
+	<item>0</item>
+	<item>-1</item>
+	<item>-3</item>
+    </string-array>
+    <string name="pref_color_topic_specific">Color topic specific</string>
+    <string name="pref_color_topic_specific_default">0.45 0.5 0.8 1</string>
+    <string-array name="pref_color_topic_specific_entries">
+	<item>Red</item>
+	<item>Green</item>
+	<item>Blue</item>
+	<item>Grey</item>
+    </string-array>
+    <string-array name="pref_color_topic_specific_values">
+	<item>0.8 0.5 0.45 1</item>
+	<item>0.45 0.8 0.45 1</item>
+	<item>0.45 0.5 0.8 1</item>
+	<item>0.3 0.3 0.3 1</item>
+    </string-array>
+    <string name="pref_color_topic_exhausted">Color topic exhausted</string>
+    <string name="pref_color_topic_exhausted_default">0.3 0.3 0.3 1</string>
+    <string-array name="pref_color_topic_exhausted_entries">
+	<item>Red</item>
+	<item>Green</item>
+	<item>Blue</item>
+	<item>Grey</item>
+    </string-array>
+    <string-array name="pref_color_topic_exhausted_values">
+	<item>0.8 0.5 0.45 1</item>
+	<item>0.45 0.8 0.45 1</item>
+	<item>0.45 0.5 0.8 1</item>
+	<item>0.3 0.3 0.3 1</item>
+    </string-array>
+    <string name="pref_async_nav_mesh_updater_threads">Async nav mesh updater threads</string>
+    <string name="pref_async_nav_mesh_updater_threads_default">1</string>
+    <string-array name="pref_async_nav_mesh_updater_threads_entries">
+	<item>Two threads</item>
+	<item>One thread</item>
+    </string-array>
+    <string-array name="pref_async_nav_mesh_updater_threads_values">
+	<item>2</item>
+	<item>1</item>
+    </string-array>
+    <string name="pref_font_size">UI Font size</string>
+    <string name="pref_font_size_default">16</string>
+    <string-array name="pref_font_size_entries">
+	<item>Large 20</item>
+	<item>Large 18</item>
+	<item>Normal 16</item>
+    </string-array>
+    <string-array name="pref_font_size_values">
+	<item>20</item>
+	<item>18</item>
+	<item>16</item>
+    </string-array>
+    <string name="pref_server_select">Select Server</string>
+    <string name="pref_server_select_default">--connect 45.90.32.251:26666</string>
+    <string-array name="pref_server_select_entries">
+        <item>Eternal World</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="pref_server_select_values">
+        <item>--connect 45.90.32.251:26666</item>
+        <item></item>
+    </string-array>
 </resources>

@@ -9,14 +9,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:name="utils.MyApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/openmw"
+        android:icon="@mipmap/ic_launcher"
         android:label="tes3mp"
         android:theme="@style/MyTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="ui.activity.about_activity"></activity>
         <activity
             android:name="ui.activity.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -38,25 +38,14 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="sensorLandscape"
             android:theme="@style/Theme.AppCompat.FullScreen" />
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="f88fafa8fb5677ac16dd43aaf73f988cd6095b06" />
-
         <activity
             android:name="ui.activity.ModsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="fullUser"
+            android:theme="@style/MyTheme"
             android:exported="true"
             android:label="@string/activity_mods"
-            android:screenOrientation="fullUser"
-            android:theme="@style/MyTheme" />
-        <activity
-            android:name="ui.activity.BrowserActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true"
-            android:label="Server Browser"
-            android:screenOrientation="fullUser"
-            android:theme="@style/MyTheme" />
+            />
     </application>
 
 </manifest>

@@ -24,6 +24,7 @@ object Constants {
     val APP_PREFERENCES = "settings"
     val HIDE_CONTROLS = "pref_hide_controls"
 
+
     // TODO: the comment below is outdated
     // Base path: [/sdcard]/Android/data/[com.libopenmw.openmw]/
     // * /sdcard - in theory, can be different, haven't seen any on modern android though
@@ -37,8 +38,8 @@ object Constants {
     // e.g. /sdcard/omw
     var USER_FILE_STORAGE = ""
 
-    // e.g. /data/data/is.xyz.omw/files/config/settings-default.cfg
-    var SETTINGS_DEFAULT_CFG = ""
+    // e.g. /data/data/is.xyz.omw/files/config/defaults.bin
+    var DEFAULTS_BIN = ""
 
     // e.g. /data/data/is.xyz.omw/files/config/openmw.cfg
     var OPENMW_CFG = ""
@@ -51,9 +52,6 @@ object Constants {
 
     // e.g. /data/data/is.xyz.omw/files/resources
     var RESOURCES = ""
-
-    // e.g. /data/data/is.xyz.omw/files/tes3mp-resources
-    var TES3MP_RESOURCES = ""
 
     // e.g. /data/data/is.xyz.omw/files/config
     var GLOBAL_CONFIG = ""

@@ -33,6 +33,7 @@ class OskTouchListener(val btn: OskButton): View.OnTouchListener {
             MotionEvent.ACTION_DOWN -> btn.pressed()
             MotionEvent.ACTION_UP -> btn.released()
         }
+
         return true
     }
 
@@ -103,10 +104,6 @@ abstract class OskButton(
         target.addView(v)
         view = v
     }
-
-    /**
-     * Remove current button from RelativeLayout.
-     */
     fun remove(target: RelativeLayout) {
         target.removeView(view);
     }
@@ -174,9 +171,8 @@ class OskShift(val buttons: ArrayList<OskSimpleButton>, positionX: Int, position
             btn.shift(false)
     }
 }
-
 class OskCaps(val buttons: ArrayList<OskSimpleButton>, positionX: Int, positionY: Int, sizeW: Int, sizeH: Int):
-    OskButton("Caps Lock", positionX, positionY, sizeW, sizeH) {
+        OskButton("Caps Lock", positionX, positionY, sizeW, sizeH) {
 
     private var state = false
 
@@ -189,7 +185,7 @@ class OskCaps(val buttons: ArrayList<OskSimpleButton>, positionX: Int, positionY
 }
 
 class OskLanguage(val reference: Osk, positionX: Int, positionY: Int, sizeW: Int, sizeH: Int):
-    OskButton("Lang", positionX, positionY, sizeW, sizeH) {
+        OskButton("Lang", positionX, positionY, sizeW, sizeH) {
 
     override fun pressed() {
         reference.changeLanguage()
@@ -206,7 +202,7 @@ class Osk {
     private var visible = false
 
     private lateinit var relativelayouttarget: RelativeLayout
-    
+
     private var russian = false
 
     init {
@@ -226,7 +222,7 @@ class Osk {
             offsetX = 0
         else
             offsetX = 30
-        
+
         val offsetY = 110
 
         var curX: Int
@@ -234,25 +230,25 @@ class Osk {
 
         if( isRussian ) {
             keyboardLayout = arrayListOf(
-                "1!2@3#4$5%6^7&8*9(0)-_=+",
-                "йЙцЦуУкКеЕнНгГшШщЩзЗхХ[{]}\\|",
-                "фФыЫвВаАпПрРоОлЛдДжЖэЭ;:'\"",
-                "яЯчЧсСмМиИтТьЬбБюЮ,<.>/?"
+                    "1!2@3#4$5%6^7&8*9(0)-_=+",
+                    "йЙцЦуУкКеЕнНгГшШщЩзЗхХ[{]}\\|",
+                    "фФыЫвВаАпПрРоОлЛдДжЖэЭ;:'\"",
+                    "яЯчЧсСмМиИтТьЬбБюЮ,<.>/?"
             )
         } else {
             keyboardLayout = arrayListOf(
-                "1!2@3#4$5%6^7&8*9(0)-_=+",
-                "qQwWeErRtTyYuUiIoOpP[{]}\\|",
-                "aAsSdDfFgGhHjJkKlL;:'\"",
-                "zZxXcCvVbBnNmM,<.>/?"
+                    "1!2@3#4$5%6^7&8*9(0)-_=+",
+                    "qQwWeErRtTyYuUiIoOpP[{]}\\|",
+                    "aAsSdDfFgGhHjJkKlL;:'\"",
+                    "zZxXcCvVbBnNmM,<.>/?"
             )
         }
-	
+
         val lineOffset = arrayOf(
-            (offsetX + buttonWidth * 1.0 + buttonMarginX).toInt(),
-            (offsetX + buttonWidth * 0.5 + buttonMarginX).toInt(),
-            (offsetX + buttonWidth * 1.25 + buttonMarginX).toInt(),
-            (offsetX + buttonWidth * 1.5 + buttonMarginX).toInt()
+                (offsetX + buttonWidth * 1.0 + buttonMarginX).toInt(),
+                (offsetX + buttonWidth * 0.5 + buttonMarginX).toInt(),
+                (offsetX + buttonWidth * 1.25 + buttonMarginX).toInt(),
+                (offsetX + buttonWidth * 1.5 + buttonMarginX).toInt()
         )
 
         val simpleButtons = ArrayList<OskSimpleButton>()
@@ -275,22 +271,22 @@ class Osk {
 
         // Backspace
         elements.add(OskRawButton(
-            "Bksp",
-            KeyEvent.KEYCODE_DEL,
-            lineOffset[0] + (buttonWidth + buttonMarginX) * keyboardLayout[0].length / 2,
-            offsetY,
-            buttonWidth * 2,
-            buttonHeight
+                "⌫",
+                KeyEvent.KEYCODE_DEL,
+                lineOffset[0] + (buttonWidth + buttonMarginX) * keyboardLayout[0].length / 2,
+                offsetY,
+                buttonWidth * 2,
+                buttonHeight
         ))
 
         // Enter
         elements.add(OskRawButton(
-            "Return",
-            KeyEvent.KEYCODE_ENTER,
-            lineOffset[2] + (buttonWidth + buttonMarginX) * keyboardLayout[2].length / 2,
-            offsetY + (buttonHeight + buttonMarginY) * 2,
-            buttonWidth * 3,
-            buttonHeight
+                "⏎",
+                KeyEvent.KEYCODE_ENTER,
+                lineOffset[2] + (buttonWidth + buttonMarginX) * keyboardLayout[2].length / 2,
+                offsetY + (buttonHeight + buttonMarginY) * 2,
+                buttonWidth * 3,
+                buttonHeight
         ))
 
         // Language
@@ -302,7 +298,7 @@ class Osk {
         // Arrows
         var arrowsCurX = lineOffset[3] + (buttonWidth + buttonMarginX) * keyboardLayout[3].length / 2 + buttonWidth
         if (isRussian)
-	        arrowsCurX -= 15
+            arrowsCurX -= 15
         var arrowsCurY = offsetY + (buttonHeight + buttonMarginY) * 3
         elements.add(OskRawButton("↑", KeyEvent.KEYCODE_DPAD_UP, arrowsCurX, arrowsCurY, buttonWidth, buttonHeight))
         arrowsCurX -= buttonWidth + buttonMarginX
@@ -341,7 +337,7 @@ class Osk {
         visible = false
         toggle()
     }
-    
+
     fun toggle() {
         visible = !visible
         for (element in elements) {
