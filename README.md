@@ -1,10 +1,6 @@
-# OpenMW for Android
+# OpenMW-tes3mp for Android, Building (unoficial)
 
-[Google Play](https://play.google.com/store/apps/details?id=is.xyz.omw) | [Google Play (Nightly)](https://play.google.com/store/apps/details?id=is.xyz.omw_nightly)
-
-[F-Droid](https://f-droid.org/packages/is.xyz.omw/) | [F-Droid (Nightly)](https://f-droid.org/packages/is.xyz.omw_nightly/)
-
-[FAQ & Info](https://omw.xyz.is/)
+The author of the original code has discontinued support. You are now on the fork page of this app. I am not ready to give a 100% guarantee that the application will work perfectly for you.
 
 ## Building
 
