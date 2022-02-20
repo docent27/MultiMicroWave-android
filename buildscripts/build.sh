@@ -95,7 +95,6 @@ fi
 if [[ $LTO = "true" ]]; then
 	CFLAGS="$CFLAGS -flto=thin"
 	CXXFLAGS="$CXXFLAGS -flto=thin"
-	# emulated-tls should not be needed in ndk r18 https://github.com/android-ndk/ndk/issues/498#issuecomment-327825754
 	LDFLAGS="$LDFLAGS -flto=thin -Wl,-plugin-opt=-emulated-tls -fuse-ld=gold"
 fi
 
