@@ -37,8 +37,8 @@ set(MYGUI_VERSION 3.4.0)
 set(MYGUI_HASH SHA256=d1d5f294670ae71f7200ed4b30859018281d8cfd45d6a38d18b97a4aba604c42)
 
 # https://github.com/ptitSeb/gl4es/releases
-set(GL4ES_VERSION b61f943335e1a871b612744b86972c3bbdb7eab1)
-set(GL4ES_HASH SHA256=2eb0d3e5609529e74394fdba1bf73f02fd6d54ab19ec1a6c117856220141b730)
+set(GL4ES_VERSION v1.1.4)
+# set(GL4ES_HASH SHA256=2eb0d3e5609529e74394fdba1bf73f02fd6d54ab19ec1a6c117856220141b730)
 
 # https://github.com/OpenMW/osg/releases
 set(OSG_VERSION ada34a6d38772f684aa70d2eb76549a33edc9a5f)
@@ -49,7 +49,7 @@ set(LZ4_VERSION 1.9.3)
 set(LZ4_HASH SHA256=030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1)
 
 # https://github.com/tes3mp/openmw-tes3mp/commits/0.7.0
-set(TES3MP_VERSION 000e8724cacaf0176f6220de111ca45098807e78)
+set(TES3MP_VERSION abdaedd7524411eae77a6e5ce0c981ea7a985cc4)
 # set(TES3MP_HASH SHA256=5f809dfb47586c8d7e6efe12eb2c32b5fc69dfa68f1d13962dda950168727d75)
 
 
@@ -333,17 +333,17 @@ ExternalProject_Add(bullet
 )
 
 set(GL4ES_PATCH
-	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/shared-library-1.1.6.patch &&
+	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/shared-library-1.1.4.patch &&
 	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/disable-shader-hacks.patch &&
-	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/psa-1.1.6.patch &&
+	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/psa-1.1.4.patch &&
 	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/highp-fog.patch &&
-	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/gamma-1.1.6.patch
+	patch -d <SOURCE_DIR> -p1 -t -N < ${CMAKE_SOURCE_DIR}/patches/gl4es/gamma-1.1.4.patch
 )
 
 ExternalProject_Add(gl4es
 	URL https://github.com/ptitSeb/gl4es/archive/${GL4ES_VERSION}.tar.gz
-	https://github.com/xyzz/openmw-deps/releases/download/v0/gl4es-${GL4ES_VERSION}.gz
-	URL_HASH ${GL4ES_HASH}
+	# https://github.com/xyzz/openmw-deps/releases/download/v0/gl4es-${GL4ES_VERSION}.gz
+	# URL_HASH ${GL4ES_HASH}
 	DOWNLOAD_DIR ${download_dir}
 
 	PATCH_COMMAND ${GL4ES_PATCH}
@@ -370,7 +370,7 @@ ExternalProject_Add(mygui
 
 	CONFIGURE_COMMAND ${wrapper_command} cmake <SOURCE_DIR>
 	${COMMON_CMAKE_ARGS}
-	-DMYGUI_RENDERSYSTEM=ON
+	-DMYGUI_RENDERSYSTEM=4
 	-DMYGUI_BUILD_DEMOS=OFF
 	-DMYGUI_BUILD_TOOLS=OFF
 	-DMYGUI_BUILD_PLUGINS=OFF
@@ -503,7 +503,7 @@ set(TES3MP_PATCH
 ExternalProject_Add(tes3mp
 	DEPENDS boost openal osg mygui ffmpeg sdl2 bullet lz4 raknet
 
-	URL https://github.com/TES3MP/TES3MP/archive/refs/tags/tes3mp-0.8.0.zip
+	URL https://github.com/TES3MP/TES3MP/archive/${TES3MP_VERSION}.tar.gz
 	# URL_HASH ${TES3MP_HASH}
 	DOWNLOAD_DIR ${download_dir}
 
