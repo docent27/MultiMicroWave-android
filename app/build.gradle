@@ -26,9 +26,9 @@ android {
     }
 
     defaultConfig {
-        applicationId "is.docent27.OMW.Net"
+        applicationId "is.docent27.OMW_Net"
         versionCode 47
-        versionName calculateVersion()
+        versionName "0.8.0"
 
         minSdkVersion 21
         targetSdkVersion 28
@@ -68,7 +68,7 @@ android {
 
         nightly {
             dimension "version"
-            applicationId "is.docent27.OMW.Net_nightly"
+            applicationId "is.docent27.OMW_Net"
             versionNameSuffix "-nightly"
         }
     }
