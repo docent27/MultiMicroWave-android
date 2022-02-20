@@ -1,4 +1,4 @@
-# MultiMicroWave for Android (unoficial)
+# OMW.Net (unoficial build tes3mp for android)
 
 Important information. I am not an official member of the tes3mp team and OpenMW. If you have problems with the operation of this application on your smartphone, I earnestly request that you DO NOT REPORT the developers of tes3mp or OpenMW, they do not officially support this port. Please be understanding. Thanks.
 
