@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "is.docent27.tes3mp"
+        applicationId "is.docent27.OMW.Net"
         versionCode 47
         versionName calculateVersion()
 
@@ -68,7 +68,7 @@ android {
 
         nightly {
             dimension "version"
-            applicationId "is.docent27.tes3mp_nightly"
+            applicationId "is.docent27.OMW.Net_nightly"
             versionNameSuffix "-nightly"
         }
     }
@@ -78,7 +78,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "tes3mp.apk"
+            outputFileName = "OMW.Net.apk"
         }
     }
 }

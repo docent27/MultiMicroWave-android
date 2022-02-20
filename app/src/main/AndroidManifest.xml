@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="tes3mp"
+        android:label="OMW.Net"
         android:theme="@style/MyTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
